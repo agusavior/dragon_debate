@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Private keys
+privatekeys.ts
+
+node_modules/
+build/
+.next/
+certificates/
+content/**
+!content/test.json
