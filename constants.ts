@@ -2,7 +2,7 @@ import { CollectionInsertOneOptions } from "mongodb";
 import privatekeys from './privatekeys'
 
 // Ports:
-export const NEXT_SERVER_PORT = 8080;
+export const NEXT_SERVER_PORT = 8085;
 export const CONTENT_SERVER_PORT = 2200;
 export const DISCORD_BOT_SERVER_PORT = 2201;
 

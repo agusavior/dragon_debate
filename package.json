@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:old": "next -p 8080",
     "build": "next build",
-    "start:old": "next start -p 8080",
     "dev": "ts-node --project tsconfig.server.json servers.ts",
     "start": "NODE_ENV=production ts-node --project tsconfig.server.json servers.ts"
   },
