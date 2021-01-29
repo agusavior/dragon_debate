@@ -49,7 +49,17 @@ const authentication = handler => (req: DbApiRequest, res: NextApiResponse) => {
     try {
         // Comprueba si la secret key es capaz de decodificar dicho token.
         // En caso de no conseguirlo, esta función largará un error, entrando en el catch.
-        user_id = new ObjectId(jwt.verify(token, AUTH_SECRET_KEY).user_id);
+        const decoded = jwt.verify(token, AUTH_SECRET_KEY);
+
+        var decodedObject: object;
+
+        if (typeof decoded === 'string') {
+            decodedObject = JSON.parse(decoded);
+        } else {
+            decodedObject = decoded;
+        }
+
+        user_id = new ObjectId(decodedObject['user_id']);
     } catch(err) {
         return res.status(401).json({ message: 'Invalid token verification.' });
     }
